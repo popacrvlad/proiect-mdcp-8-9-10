@@ -1,11 +1,12 @@
-<script> document.cookie = "session=test GDPR"; document.cookie = "favorite_task=collect Data"; function alertCookie() { alert(document.cookie); } </script>
-<body> Bine ai venit la lab <button onclick="alertCookie()">Show cookies</button> </body>
+
 
 ---
 layout: default
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
+<script> document.cookie = "session=test GDPR"; document.cookie = "favorite_task=collect Data"; function alertCookie() { alert(document.cookie); } </script>
+<body> Bine ai venit la lab <button onclick="alertCookie()">Show cookies</button> </body>
 
 [Link to another page](./another-page.html).
 
