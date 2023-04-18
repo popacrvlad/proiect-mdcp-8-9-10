@@ -84,6 +84,87 @@ function clearOutputDoOnce() {
   <code id="do-once"></code>
 </div>
 
+<script>
+  function resetOnce() {
+  // Note that we are setting `SameSite=None;` in this example because the example
+  // needs to work cross-origin.
+  // It is more common not to set the `SameSite` attribute, which results in the default,
+  // and more secure, value of `SameSite=Lax;`
+  document.cookie =
+    "doSomethingOnlyOnce=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Secure";
+
+  const output = document.getElementById("reset-once");
+  output.textContent = "> Reset!";
+}
+
+function clearOutputResetOnce() {
+  const output = document.getElementById("reset-once");
+  output.textContent = "";
+}
+</script>
+
+<button onclick="resetOnce()">Reset only once cookie</button>
+
+<button onclick="clearOutputResetOnce()">Clear</button>
+
+<div>
+  <code id="reset-once"></code>
+</div>
+
+<script>
+  // Note that we are setting `SameSite=None;` in this example because the example
+// needs to work cross-origin.
+// It is more common not to set the `SameSite` attribute, which results in the default,
+// and more secure, value of `SameSite=Lax;`
+document.cookie = "reader=1; SameSite=None; Secure";
+
+function checkACookieExists() {
+  if (
+    document.cookie.split(";").some((item) => item.trim().startsWith("reader="))
+  ) {
+    const output = document.getElementById("a-cookie-existence");
+    output.textContent = '> The cookie "reader" exists';
+  }
+}
+
+function clearOutputACookieExists() {
+  const output = document.getElementById("a-cookie-existence");
+  output.textContent = "";
+}
+</script>
+
+<button onclick="checkACookieExists()">Check a cookie exists</button>
+
+<button onclick="clearOutputACookieExists()">Clear</button>
+
+<div>
+  <code id="a-cookie-existence"></code>
+</div>
+
+<script>
+  function checkCookieHasASpecificValue() {
+  if (document.cookie.split(";").some((item) => item.includes("reader=1"))) {
+    const output = document.getElementById("a-specific-value-of-the-cookie");
+    output.textContent = '> The cookie "reader" has a value of "1"';
+  }
+}
+
+function clearASpecificValueOfTheCookie() {
+  const output = document.getElementById("a-specific-value-of-the-cookie");
+  output.textContent = "";
+}
+</script>
+
+<button onclick="checkCookieHasASpecificValue()">
+  Check that a cookie has a specific value
+</button>
+
+<button onclick="clearASpecificValueOfTheCookie()">Clear</button>
+
+<div>
+  <code id="a-specific-value-of-the-cookie"></code>
+</div>
+
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
 # Header 1
