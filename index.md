@@ -6,21 +6,8 @@ layout: default
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 <script> document.cookie = "session=test GDPR"; document.cookie = "favorite_task=collect Data"; function alertCookie() { alert(document.cookie); }
-// Note that we are setting `SameSite=None;` in this example because the example
-// needs to work cross-origin.
-// It is more common not to set the `SameSite` attribute, which results in the default,
-// and more secure, value of `SameSite=Lax;`
-document.cookie = "name=oeschger; SameSite=None; Secure";
-document.cookie = "favorite_food=tripe; SameSite=None; Secure";
-function showCookies() {
-  const output = document.getElementById("cookies");
-  output.textContent = `> ${document.cookie}`;
-}
-function clearOutputCookies() {
-  const output = document.getElementById("cookies");
-  output.textContent = "";
-}
-</script>
+document.cookie = "name=oeschger; SameSite=None; Secure"; document.cookie = "favorite_food=tripe; SameSite=None; Secure"; function showCookies() { const output = document.getElementById("cookies"); output.textContent = `> ${document.cookie}`;}
+function clearOutputCookies() {const output = document.getElementById("cookies");output.textContent = "";}</script>
 <body> Bine ai venit la lab <button onclick="alertCookie()">Show cookies</button> </body>
 <button onclick="showCookies()">Show cookies</button>
 
