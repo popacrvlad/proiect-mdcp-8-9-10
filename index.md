@@ -13,10 +13,15 @@ function clearOutputCookies() {const output = document.getElementById("cookies")
 
 <button onclick="clearOutputCookies()">Clear</button>
 
-// Note that we are setting `SameSite=None;` in this example because the example
-// needs to work cross-origin.
-// It is more common not to set the `SameSite` attribute, which results in the default,
-// and more secure, value of `SameSite=Lax;`
+<div>
+  <code id="cookies"></code>
+</div>
+
+[Link to another page](./another-page.html).
+
+There should be whitespace between paragraphs.
+
+<script>
 document.cookie = "test1=Hello; SameSite=None; Secure";
 document.cookie = "test2=World; SameSite=None; Secure";
 
@@ -34,14 +39,15 @@ function clearOutputCookieValue() {
   const output = document.getElementById("cookie-value");
   output.textContent = "";
 }
+</script>
+
+<button onclick="showCookieValue()">Show cookie value</button>
+
+<button onclick="clearOutputCookieValue()">Clear</button>
 
 <div>
-  <code id="cookies"></code>
+  <code id="cookie-value"></code>
 </div>
-
-[Link to another page](./another-page.html).
-
-There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
